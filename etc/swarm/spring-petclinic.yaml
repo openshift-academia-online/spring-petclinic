@@ -9,6 +9,13 @@ services:
         constraints:
           - node.role == worker
       replicas: 2
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: "1Gi"
+        reservations:
+          cpus: "0.5"
+          memory: "1Gi"
     image: openshiftacademiaonline/spring-petclinic-dev:latest
     ports:
       - 80:8080
